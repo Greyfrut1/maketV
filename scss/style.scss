@@ -54,10 +54,13 @@
   width: 447px;
   display: flex;
   justify-content: space-between;
-  background-image: url("../img/prokat.png");
-  background-position: left bottom 7px;
-  background-repeat: no-repeat;
-  .header__header__menu_item a{
+  .header__header__menu_item {
+    &:hover{
+      background-image: url("../img/prokat.png");
+      background-position: center bottom 7px;
+      background-repeat: no-repeat;
+    }
+    a{
     list-style-type: none;
     font-size: 16px;
     line-height: 55px;
@@ -67,6 +70,7 @@
       text-decoration: none;
     }
   }
+}
 }
 }
 .intro{
@@ -180,7 +184,7 @@
   padding-bottom: 44px;
   .about-long__img{
     margin-left: 40px;
-    transform: scale(1.08);
+    transform: scale(1.085);
     margin-top: 25px;
   }
   .about-long-second{
@@ -588,7 +592,7 @@
   margin-top: 70px;
   padding-top: 58px;
   padding-left: 66px;
-  padding-right: 66px;
+  padding-right: 86px;
   padding-bottom: 40px;
   margin-bottom: -65px;
   input{
@@ -608,7 +612,7 @@
     width: 300px;
   }
   .contacts__form_block-right{
-    width: 320px;
+    width: 300px;
     textarea{
       width: 100%;
       height: 190px;
@@ -628,7 +632,6 @@
       font-weight: 700;
       margin-top: 20px;
       padding: 1px 31px;
-      margin-right: 20px;
       background-color: $color-price-blue;
       border-color: $color-price-blue;
       &:hover{
@@ -638,7 +641,13 @@
     }
   }
 }
-
+.contacts__form .error{
+  box-shadow: inset 0px 0px 10px 0px #ff8383;
+  border: 1px solid #ff8383 !important;
+  &::placeholder{
+    color: #dc7f7f;
+  }
+}
 #map{
   height: 370px;
   width: 100%;
@@ -647,16 +656,61 @@
 .footer{
   background-color: $color-black;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 53px;
   padding-bottom: 20px;
   .footer__list{
     list-style-type: none;
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     .footer__list_item{
       margin: 0 13px;
       width: 24px;
+      .footer__list_item_link{
+        height: 24px;
+        width: 24px;
+        display: block;
+      }
+      .img-twitter{
+        background-image: url(../img/dark-twitter.svg);
+        background-size: 24px 24px;
+        &:hover{
+          background-image: url(../img/blue-twitter.svg);
+        }
+      }
+      .img-behance{
+        background-image: url(../img/dark-behance.png);
+        background-size: 20px 24px;
+        background-repeat: no-repeat;
+        background-position-x: 2px;
+        &:hover{
+          background-image: url(../img/blue-behance.png);
+        }
+      }
+      .img-dribbble{
+        background-image: url(../img/dark-dribbble.png);
+        background-size: 22px 22px;
+        background-position-x: 2px;
+        &:hover{
+          background-image: url(../img/blue-dribbble.png);
+        }
+      }
+      .img-fb{
+        background-image: url(../img/dark-facebook.png);
+        background-size: 22px 22px;
+        background-position-x: 2px;
+        background-repeat: no-repeat;
+        &:hover{
+          background-image: url(../img/blue-facebook.png);
+        }
+      }
+      .img-linkedin{
+        background-image: url(../img/dark-linkedin.png);
+        background-size: 24px 24px;
+        &:hover{
+          background-image: url(../img/blue-linkedin.png);
+        }
+      }
     }
   }
   .footer__text{
@@ -717,6 +771,17 @@
   .about-long .about-long__img{
     height: 372px;
   }
+  .pricing {
+    padding-bottom: 40px;
+    .pricing__card{
+    margin-bottom: 20px;
+      .pricing__card_bottom{
+        padding-top: 25px;
+        .price__card_button{
+          margin-top: 15px;
+        }
+      }
+  }
 }
 @media (max-width: 767px) {
   .contacts{
@@ -729,17 +794,6 @@
     .contacts__block .contacts__block_text{
       font-size: 16px;
     }
-  }
-  .pricing {
-    padding-bottom: 40px;
-    .pricing__card{
-    margin-bottom: 20px;
-      .pricing__card_bottom{
-        padding-top: 25px;
-        .price__card_button{
-          margin-top: 15px;
-        }
-      }
   }
   }
   .about-long .container .row{
@@ -772,6 +826,7 @@
   .popup{
     position: absolute;
     top: 92px;
+    left: 0;
     width: 100%;
     height: 256px;
     background-color: $color-black;
@@ -807,46 +862,15 @@
       padding-right: 25px;
     }
   }
-  .features {
-    .features__card_head{
-      font-size: 24px;
-    }
-    .features__card_text {
-     font-size: 16px;
-      line-height: 20px;
-    }
-  }
+  .about-short .about-short__img {
+    transform: scale(1);
+}
 }
 @media (max-width: 370px) {
-  .pricing .pricing__card {
-    .pricing__card_bottom{
-      padding-top: 15px;
-      padding-bottom: 13px;
-      .price__card_button{
-        padding: 1px 10px;
-        margin-top: 15px;
-      }
-      .pricing__card_text{
-        font-size: 16px;
-        line-height: 20px;
-      }
-    }
-    .pricing__card_number {
-    padding-top: 20px;
-    padding-bottom: 10px;
-
-    .pricing__card_number_price {
-      font-size: 40px;
-
-      .dollar {
-        font-size: 15px;
-      }
-    }
-
-    .duration {
-      font-size: 16px;
-    }
-  }
+  
+.pricing_card_block{
+  max-width:100%;
+  flex: 0 0 100%;
 }
   .eye-catcher .button-block .eye-catcher__button-primary, .eye-catcher .button-block .eye-catcher__button-light{
      padding: 0 11px;

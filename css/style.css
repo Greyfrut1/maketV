@@ -57,8 +57,10 @@
   width: 447px;
   display: flex;
   justify-content: space-between;
+}
+.header__header .header__header__menu .header__header__menu_item:hover {
   background-image: url("../img/prokat.png");
-  background-position: left bottom 7px;
+  background-position: center bottom 7px;
   background-repeat: no-repeat;
 }
 .header__header .header__header__menu .header__header__menu_item a {
@@ -187,7 +189,7 @@
 }
 .about-long .about-long__img {
   margin-left: 40px;
-  transform: scale(1.08);
+  transform: scale(1.085);
   margin-top: 25px;
 }
 .about-long .about-long-second {
@@ -599,7 +601,7 @@
   margin-top: 70px;
   padding-top: 58px;
   padding-left: 66px;
-  padding-right: 66px;
+  padding-right: 86px;
   padding-bottom: 40px;
   margin-bottom: -65px;
 }
@@ -620,7 +622,7 @@
   width: 300px;
 }
 .contacts__form .contacts__form_block-right {
-  width: 320px;
+  width: 300px;
 }
 .contacts__form .contacts__form_block-right textarea {
   width: 100%;
@@ -641,13 +643,20 @@
   font-weight: 700;
   margin-top: 20px;
   padding: 1px 31px;
-  margin-right: 20px;
   background-color: #008ed6;
   border-color: #008ed6;
 }
 .contacts__form .contacts__form_block-right .form-button:hover {
   background-color: #026fa7;
   border-color: #026fa7;
+}
+
+.contacts__form .error {
+  box-shadow: inset 0px 0px 10px 0px #ff8383;
+  border: 1px solid #ff8383 !important;
+}
+.contacts__form .error::placeholder {
+  color: #dc7f7f;
 }
 
 #map {
@@ -659,18 +668,63 @@
 .footer {
   background-color: #15141a;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 53px;
   padding-bottom: 20px;
 }
 .footer .footer__list {
   list-style-type: none;
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .footer .footer__list .footer__list_item {
   margin: 0 13px;
   width: 24px;
+}
+.footer .footer__list .footer__list_item .footer__list_item_link {
+  height: 24px;
+  width: 24px;
+  display: block;
+}
+.footer .footer__list .footer__list_item .img-twitter {
+  background-image: url(../img/dark-twitter.svg);
+  background-size: 24px 24px;
+}
+.footer .footer__list .footer__list_item .img-twitter:hover {
+  background-image: url(../img/blue-twitter.svg);
+}
+.footer .footer__list .footer__list_item .img-behance {
+  background-image: url(../img/dark-behance.png);
+  background-size: 20px 24px;
+  background-repeat: no-repeat;
+  background-position-x: 2px;
+}
+.footer .footer__list .footer__list_item .img-behance:hover {
+  background-image: url(../img/blue-behance.png);
+}
+.footer .footer__list .footer__list_item .img-dribbble {
+  background-image: url(../img/dark-dribbble.png);
+  background-size: 22px 22px;
+  background-position-x: 2px;
+}
+.footer .footer__list .footer__list_item .img-dribbble:hover {
+  background-image: url(../img/blue-dribbble.png);
+}
+.footer .footer__list .footer__list_item .img-fb {
+  background-image: url(../img/dark-facebook.png);
+  background-size: 22px 22px;
+  background-position-x: 2px;
+  background-repeat: no-repeat;
+}
+.footer .footer__list .footer__list_item .img-fb:hover {
+  background-image: url(../img/blue-facebook.png);
+}
+.footer .footer__list .footer__list_item .img-linkedin {
+  background-image: url(../img/dark-linkedin.png);
+  background-size: 24px 24px;
+}
+.footer .footer__list .footer__list_item .img-linkedin:hover {
+  background-image: url(../img/blue-linkedin.png);
 }
 .footer .footer__text {
   font-size: 14px;
@@ -724,17 +778,6 @@
   .about-long .about-long__img {
     height: 372px;
   }
-}
-@media (max-width: 767px) {
-  .contacts .contacts__form {
-    flex-direction: column;
-  }
-  .contacts .contacts__form .contacts__form_block-right, .contacts .contacts__form .contacts__form_block-left {
-    width: 100%;
-  }
-  .contacts .contacts__block .contacts__block_text {
-    font-size: 16px;
-  }
   .pricing {
     padding-bottom: 40px;
   }
@@ -747,15 +790,32 @@
   .pricing .pricing__card .pricing__card_bottom .price__card_button {
     margin-top: 15px;
   }
+}
+@media (max-width: 991px) and (max-width: 767px) {
+  .contacts .contacts__form {
+    flex-direction: column;
+  }
+  .contacts .contacts__form .contacts__form_block-right, .contacts .contacts__form .contacts__form_block-left {
+    width: 100%;
+  }
+  .contacts .contacts__block .contacts__block_text {
+    font-size: 16px;
+  }
+}
+@media (max-width: 991px) {
   .about-long .container .row {
     flex-direction: column-reverse;
   }
   .about-long .container .row .about-long-second, .about-long .container .row .about-long__img {
     margin-left: 0;
   }
+}
+@media (max-width: 991px) {
   .header__header .header__header__menu {
     display: none;
   }
+}
+@media (max-width: 991px) {
   .hamb {
     display: flex;
     align-items: center;
@@ -774,18 +834,25 @@
     background-color: #ffffff;
     transition: 0.2s;
   }
+}
+@media (max-width: 991px) {
   .popup {
     position: absolute;
     top: 92px;
+    left: 0;
     width: 100%;
     height: 256px;
     background-color: #15141a;
     z-index: 100;
     transition: 0.2s;
   }
+}
+@media (max-width: 991px) {
   .popup.open {
     display: flex;
   }
+}
+@media (max-width: 991px) {
   .popup .header__header__menu {
     display: flex;
     width: 100%;
@@ -801,6 +868,8 @@
     color: #fffefe;
     font-weight: 600;
   }
+}
+@media (max-width: 991px) {
   .header .container {
     background-image: none;
   }
@@ -810,39 +879,14 @@
     padding-left: 20px;
     padding-right: 25px;
   }
-  .features .features__card_head {
-    font-size: 24px;
-  }
-  .features .features__card_text {
-    font-size: 16px;
-    line-height: 20px;
+  .about-short .about-short__img {
+    transform: scale(1);
   }
 }
 @media (max-width: 370px) {
-  .pricing .pricing__card .pricing__card_bottom {
-    padding-top: 15px;
-    padding-bottom: 13px;
-  }
-  .pricing .pricing__card .pricing__card_bottom .price__card_button {
-    padding: 1px 10px;
-    margin-top: 15px;
-  }
-  .pricing .pricing__card .pricing__card_bottom .pricing__card_text {
-    font-size: 16px;
-    line-height: 20px;
-  }
-  .pricing .pricing__card .pricing__card_number {
-    padding-top: 20px;
-    padding-bottom: 10px;
-  }
-  .pricing .pricing__card .pricing__card_number .pricing__card_number_price {
-    font-size: 40px;
-  }
-  .pricing .pricing__card .pricing__card_number .pricing__card_number_price .dollar {
-    font-size: 15px;
-  }
-  .pricing .pricing__card .pricing__card_number .duration {
-    font-size: 16px;
+  .pricing_card_block {
+    max-width: 100%;
+    flex: 0 0 100%;
   }
   .eye-catcher .button-block .eye-catcher__button-primary, .eye-catcher .button-block .eye-catcher__button-light {
     padding: 0 11px;
