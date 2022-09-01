@@ -1,0 +1,134 @@
+@import 'variables.scss';
+
+.pricing {
+    padding-top: 42px;
+    padding-bottom: 59px;
+
+    .pricing__head {
+        font-size: 14px;
+        line-height: 48px;
+        text-transform: uppercase;
+        color: $color-blue;
+        font-weight: 700;
+        margin-bottom: 0;
+        letter-spacing: 1.4px;
+        text-align: center;
+    }
+
+    .pricing__subhead {
+        color: black;
+        font-size: 35.5px;
+        letter-spacing: 0.3px;
+        line-height: 22px;
+        margin-top: 5px;
+        font-weight: 600;
+        padding-bottom: 40px;
+        background-image: url("../img/prokat.png");
+        background-position: center bottom 0;
+        background-repeat: no-repeat;
+        text-align: center;
+    }
+
+    .pricing__cards {
+        padding-top: 62px;
+    }
+
+    .pricing__card {
+        border: 1px solid $color-border-grey;
+
+        .pricing__card_head {
+            border-bottom: 1px solid $color-border-grey;
+            font-size: 24px;
+            line-height: 20px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 27px;
+            padding-bottom: 23px;
+            margin-bottom: 0;
+        }
+
+        .pricing__card_number {
+            padding-top: 35px;
+            padding-bottom: 16px;
+
+            .pricing__card_number_price {
+                text-align: center;
+                font-size: 60px;
+                font-weight: 600;
+                line-height: 50px;
+                margin-left: -4px;
+                margin-bottom: 5px;
+            }
+
+            .dollar {
+                font-size: 25px;
+                vertical-align: top;
+                line-height: 38px;
+                margin-right: 1px;
+            }
+        }
+
+        .duration {
+            text-align: center;
+            font-size: 18px;
+            color: $color-grey;
+        }
+
+        .pricing__card_bottom {
+            border-top: 1px solid $color-border-grey;
+            padding-top: 45px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 28px;
+            text-align: center;
+
+            .pricing__card_text {
+                font-size: 18px;
+                line-height: 26px;
+                color: #999999;
+                font-weight: 400;
+                text-align: center;
+
+                span {
+                    color: $color-price-blue;
+                }
+            }
+
+            .price__card_button {
+                border: 1px solid $color-border-grey;
+                margin-top: 25px;
+                font-size: 14px;
+                line-height: 48px;
+                color: #008ed6;
+                font-weight: 700;
+                padding: 1px 41px;
+            }
+        }
+
+        &:hover {
+            .pricing__card_head {
+                color: $color-price-blue;
+            }
+
+            .pricing__card_number {
+                background-color: $color-price-blue;
+
+                .pricing__card_number_price {
+                    color: $color-white;
+                }
+
+                .duration {
+                    color: $color-white;
+                }
+            }
+
+            .price__card_button {
+                border: 1px solid $color-price-blue;
+                background-color: $color-price-blue;
+                color: $color-white;
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+@import 'variables.scss';
+
+.footer {
+  background-color: $color-black;
+  text-align: center;
+  padding-top: 53px;
+  padding-bottom: 20px;
+
+  .footer__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+
+    .footer__list_item {
+      margin: 0 13px;
+      width: 24px;
+
+      .footer__list_item_link {
+        height: 24px;
+        width: 24px;
+        display: block;
+      }
+
+      .img-twitter {
+        background-image: url(../img/dark-twitter.svg);
+        background-size: 24px 24px;
+
+        &:hover {
+          background-image: url(../img/blue-twitter.svg);
+        }
+      }
+
+      .img-behance {
+        background-image: url(../img/dark-behance.png);
+        background-size: 20px 24px;
+        background-repeat: no-repeat;
+        background-position-x: 2px;
+
+        &:hover {
+          background-image: url(../img/blue-behance.png);
+        }
+      }
+
+      .img-dribbble {
+        background-image: url(../img/dark-dribbble.png);
+        background-size: 22px 22px;
+        background-position-x: 2px;
+
+        &:hover {
+          background-image: url(../img/blue-dribbble.png);
+        }
+      }
+
+      .img-fb {
+        background-image: url(../img/dark-facebook.png);
+        background-size: 22px 22px;
+        background-position-x: 2px;
+        background-repeat: no-repeat;
+
+        &:hover {
+          background-image: url(../img/blue-facebook.png);
+        }
+      }
+
+      .img-linkedin {
+        background-image: url(../img/dark-linkedin.png);
+        background-size: 24px 24px;
+
+        &:hover {
+          background-image: url(../img/blue-linkedin.png);
+        }
+      }
+    }
+  }
+
+  .footer__text {
+    font-size: 14px;
+    line-height: 48px;
+    text-transform: uppercase;
+    color: #444348;
+    font-weight: 600;
+  }
+}
+
+.hamb {
+  display: none;
+}
+
+.popup {
+  display: none;
+}
+
+.features__slider {
+  .slick-dots {
+    bottom: -45px;
+  }
+
+  .slick-list {
+    width: 100%;
+  }
+}

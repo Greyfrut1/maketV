@@ -1,14 +1,18 @@
-$(function (){
+//Функція дял слайдерів
+$(function () {
+  //Слайдер для коментарів
   $('.testimonials__slider').slick({
-    slidesToScroll:2,
+    //Версія з двома коментарями для широких екранів
+    slidesToScroll: 2,
     slidesToShow: 2,
     dots: true,
     arrows: false,
     responsive: [
       {
+        //Версія з одним коментарем для екранів менших шириною ніж 768px
         breakpoint: 768,
-        settings:{
-          slidesToScroll:1,
+        settings: {
+          slidesToScroll: 1,
           slidesToShow: 1,
           dots: true,
           arrows: false,
@@ -16,25 +20,29 @@ $(function (){
       }
     ]
   })
+  //Сладер для адаптивного відображення фіч
   $('.features__slider').slick({
-    slidesToScroll:4,
+    //Версія без слайдера де відображаються всі фічі
+    slidesToScroll: 4,
     slidesToShow: 4,
     dots: false,
     arrows: false,
     responsive: [
       {
+        //Версія з відображенням 2х фіч для екранів меншою шириною ніж 769рх але більше за 450рх
         breakpoint: 769,
-        settings:{
-          slidesToScroll:2,
+        settings: {
+          slidesToScroll: 2,
           slidesToShow: 2,
           dots: true,
           arrows: false,
         }
       },
       {
+        //Версія з відображенням 1ї фічі для екранів з шириною меншою ніж 450рх
         breakpoint: 450,
-        settings:{
-          slidesToScroll:1,
+        settings: {
+          slidesToScroll: 1,
           slidesToShow: 1,
           dots: true,
           arrows: false,
@@ -43,14 +51,14 @@ $(function (){
     ]
   })
 })
-
-function initMap(){
-  var pos = {lat: 25.763680230740764,  lng: -80.18945669637938};
+//Функція для гугл карти
+function initMap() {
+  var pos = { lat: 25.763680230740764, lng: -80.18945669637938 };
   var opt = {
     scrollwheel: false,
     scaleControl: false,
     mapTypeControl: false,
-    disableDefaultUI:false,
+    disableDefaultUI: false,
     center: pos,
     zoom: 17
   }
@@ -63,47 +71,19 @@ function initMap(){
   })
 }
 
+//Константи для підключення елементів для вспливаючого меню
 const hamb = document.querySelector('#hamb');
 const popup = document.querySelector('#popup');
 const menu = document.querySelector('#menu').cloneNode(1);
 
 hamb.addEventListener("click", hambHandler);
-
-function hambHandler(e){
+//Функція яка добавляє клас "ореn" для відображення вспливаючого меню
+function hambHandler(e) {
   e.preventDefault();
   popup.classList.toggle("open");
   renderPopup();
 }
-
-function renderPopup(){
+//Функція як додає елементи меню в впливаюче меню
+function renderPopup() {
   popup.appendChild(menu);
-}
-
-let form = document.querySelector('.contacts__form'),
-    fromInput = document.querySelectorAll('.input'),
-    inputEmail = document.querySelector('.input_email'),
-    inputName = document.querySelector('.input_name'),
-    inputSubject = document.querySelector('.input_subject'),
-    inputTextarea = document.querySelector('.textarea');
-
-form.onsubmit = function () {
-  let emailVal = inputEmail.value,
-      nameVal = inputName.value,
-      subjectVal = inputSubject.value,
-      textareaVal = inputTextarea.value;
-  let i = 0;
-  fromInput.forEach(function(input){
-    if (input.value === '') {
-      input.classList.add('error');
-      input.placeholder = 'the field must be filled';
-    } else {
-      input.classList.remove('error');
-      i = 1;
-    }
-  })
-  if(i === 1){
-    return true;
-  }else{
-    return false;
-  }
 }

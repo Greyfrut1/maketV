@@ -1,0 +1,65 @@
+@import 'variables.scss';
+
+.header {
+  background: url("../img/intro-bg.png");
+  background-size: cover;
+
+  .container {
+    background-image: url("../img/devices.png");
+    background-repeat: no-repeat;
+    background-position: bottom -102px right -3px;
+  }
+}
+
+.header__header {
+  padding-top: 21px;
+
+  .header__header__logo {
+    display: flex;
+
+    .header__header__logo_name {
+      font-size: 24px;
+      line-height: 58px;
+      color: $color-white;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      font-family: "Quicksand", sans-serif;
+    }
+
+    .header__header__logo_sub-name {
+      font-size: 9px;
+      letter-spacing: 1px;
+      line-height: 10px;
+      color: $color-white;
+      font-weight: 400;
+      margin-left: 6px;
+      margin-top: 20px;
+    }
+  }
+
+  .header__header__menu {
+    width: 447px;
+    display: flex;
+    justify-content: space-between;
+
+    .header__header__menu_item {
+      &:hover {
+        background-image: url("../img/prokat.png");
+        background-position: center bottom 7px;
+        background-repeat: no-repeat;
+      }
+
+      a {
+        list-style-type: none;
+        font-size: 16px;
+        line-height: 55px;
+        color: #fffefe;
+        font-weight: 600;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
